@@ -34,11 +34,11 @@ var bio = {
         $("#header").append(formattedWelcomeMessage);
         $("#header").append(formattedPictureURL);
         $("#header").append(HTMLskillsStart);
-        for (var i = 0; i < bio.skills.length; i++) {
+        for (i = 0; i < bio.skills.length; i++) {
             $("#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
         }
     }
-}
+};
 
 var education = {
     "schools": [{
@@ -57,7 +57,7 @@ var education = {
 
         }],
     "display": function () {
-        for (var i = 0; i < education.schools.length; i++) {
+        for (i = 0; i < education.schools.length; i++) {
             $("#education").append(HTMLschoolStart);
             $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[i].name));
             $(".education-school:last").append(HTMLschoolDegree.replace("%data%", education.schools[i].degree));
@@ -66,7 +66,7 @@ var education = {
             $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[i].major));
             $(".education-entry:last").append(HTMLdivEnd);
         }
-        for (var i = 0; i < education.onlineCourses.length; i++) {
+        for (i = 0; i < education.onlineCourses.length; i++) {
             if (!i) {
                 $("#education").append(HTMLonlineClasses);
             }
@@ -79,7 +79,7 @@ var education = {
 
         }
     }
-}
+};
 
 var work = {
     "jobs": [{
@@ -96,7 +96,7 @@ var work = {
             "description": "Configured, installed, and supported Point of Sale systems."
         }],
     "display": function () {
-        for (var i = 0; i < work.jobs.length; i++) {
+        for (i = 0; i < work.jobs.length; i++) {
             $("#workExperience").append(HTMLworkStart);
             $(".work-entry:last").append(HTMLworkEmployer.replace("%data%", this.jobs[i].employer));
             $(".work-employer:last").append(HTMLworkTitle.replace("%data%", this.jobs[i].title));
@@ -107,8 +107,7 @@ var work = {
         }
 
     }
-    // display function
-}
+};
 
 var projects = {
     "projects": [{
@@ -123,18 +122,18 @@ var projects = {
             "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
         }],
     "display": function () {
-        for (var i = 0; i < projects.projects.length; i++) {
+        for (i = 0; i < projects.projects.length; i++) {
             $("#projects").append(HTMLprojectStart);
             $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[i].title));
             $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[i].dates));
             $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[i].description));
-            for (var a = 0; a < projects.projects[i].images.length; a++) {
+            for (a = 0; a < projects.projects[i].images.length; a++) {
                 $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[i].images[a]));
             }
             $(".project-entry:last").append(HTMLdivEnd);
         }
     }
-}
+};
 
 bio.display();
 work.display();
