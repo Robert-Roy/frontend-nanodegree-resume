@@ -1,6 +1,5 @@
 // $("#main").append("Robert Roy");
 // [string].replace([old],[new]);
-
 var bio = {
     "name": "Robert Roy",
     "role": "Front End Web Developer",
@@ -14,7 +13,7 @@ var bio = {
     "welcomeMessage": "I can do stuff!",
     "skills": ["Coding with PHP, MySQL, Javascript, and HTML/CSS", "Using Git, WordPress, NetBeans, Visual Studio 2013, and Eclipse", "Familiarity with Laravel, Linux, GIMP, and cPanel"],
     "biopic": "images/fry.jpg",
-    "display": function () {
+    "display": function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -42,21 +41,21 @@ var bio = {
 
 var education = {
     "schools": [{
-            "name": "San Jacinto College",
-            "location": "Houston, TX",
-            "degree": "AA",
-            "dates": "2013 - 2015",
-            "url": "www.sanjac.edu",
-            "major": "Business"
-        }],
+        "name": "San Jacinto College",
+        "location": "Houston, TX",
+        "degree": "AA",
+        "dates": "2013 - 2015",
+        "url": "www.sanjac.edu",
+        "major": "Business"
+    }],
     "onlineCourses": [{
-            "title": "Front-End Web Developer Nanodegree",
-            "school": "Udacity.com",
-            "dates": "2017 - Now",
-            "url": "www.udacity.com"
+        "title": "Front-End Web Developer Nanodegree",
+        "school": "Udacity.com",
+        "dates": "2017 - Now",
+        "url": "www.udacity.com"
 
-        }],
-    "display": function () {
+    }],
+    "display": function() {
         for (i = 0; i < education.schools.length; i++) {
             $("#education").append(HTMLschoolStart);
             $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[i].name));
@@ -83,19 +82,19 @@ var education = {
 
 var work = {
     "jobs": [{
-            "employer": "Merchant Card Solutions",
-            "title": "Project Lead",
-            "location": "Abilene, TX",
-            "dates": "2015 - 2017",
-            "description": "Configured, installed, and supported Point of Sale systems."
-        }, {
-            "employer": "POS Solutions",
-            "title": "Project Lead",
-            "location": "Austin, TX",
-            "dates": "2017 - Now",
-            "description": "Configured, installed, and supported Point of Sale systems."
-        }],
-    "display": function () {
+        "employer": "Merchant Card Solutions",
+        "title": "Project Lead",
+        "location": "Abilene, TX",
+        "dates": "2015 - 2017",
+        "description": "Configured, installed, and supported Point of Sale systems."
+    }, {
+        "employer": "POS Solutions",
+        "title": "Project Lead",
+        "location": "Austin, TX",
+        "dates": "2017 - Now",
+        "description": "Configured, installed, and supported Point of Sale systems."
+    }],
+    "display": function() {
         for (i = 0; i < work.jobs.length; i++) {
             $("#workExperience").append(HTMLworkStart);
             $(".work-entry:last").append(HTMLworkEmployer.replace("%data%", this.jobs[i].employer));
@@ -111,17 +110,17 @@ var work = {
 
 var projects = {
     "projects": [{
-            "title": "Robert's Workspace",
-            "dates": "2016 - Now",
-            "description": "My portfolio site.",
-            "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
-        }, {
-            "title": "Numbers Into Words",
-            "dates": "January 13, 2017 - January 15, 2017",
-            "description": "A site that converts nearly any numeric string input to an english string.",
-            "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
-        }],
-    "display": function () {
+        "title": "Robert's Workspace",
+        "dates": "2016 - Now",
+        "description": "My portfolio site.",
+        "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+    }, {
+        "title": "Numbers Into Words",
+        "dates": "January 13, 2017 - January 15, 2017",
+        "description": "A site that converts nearly any numeric string input to an english string.",
+        "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
+    }],
+    "display": function() {
         for (i = 0; i < projects.projects.length; i++) {
             $("#projects").append(HTMLprojectStart);
             $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[i].title));
@@ -139,4 +138,3 @@ bio.display();
 work.display();
 projects.display();
 education.display();
-
