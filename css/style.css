@@ -163,6 +163,10 @@ ul {
   display: none;
 }
 
+#role {
+    color: white;
+}
+
 img {
   padding: 10px;
 }

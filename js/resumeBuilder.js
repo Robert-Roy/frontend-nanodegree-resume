@@ -46,7 +46,7 @@ var education = {
         "degree": "AA",
         "dates": "2013 - 2015",
         "url": "www.sanjac.edu",
-        "major": "Business"
+        "majors": "Business"
     }],
     "onlineCourses": [{
         "title": "Front-End Web Developer Nanodegree",
@@ -62,7 +62,7 @@ var education = {
             $(".education-school:last").append(HTMLschoolDegree.replace("%data%", education.schools[i].degree));
             $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[i].dates));
             $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[i].location));
-            $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[i].major));
+            $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[i].majors));
             $(".education-entry:last").append(HTMLdivEnd);
         }
         for (i = 0; i < education.onlineCourses.length; i++) {
@@ -138,3 +138,4 @@ bio.display();
 work.display();
 projects.display();
 education.display();
+$("#mapDiv").append(googleMap);
