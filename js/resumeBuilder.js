@@ -20,16 +20,11 @@ var bio = {
         var formattedPictureURL = HTMLbioPic.replace("%data%", bio.biopic);
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
-        $("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
-        $("#topContacts").append(HTMLcontactGeneric.replace("%data%", bio.contacts.website).replace("%contact%", "website"));
-        $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-        $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
-        $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
-        $("#footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
-        $("#footerContacts").append(HTMLcontactGeneric.replace("%data%", bio.contacts.website).replace("%contact%", "website"));
-        $("#footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-        $("#footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
-        $("#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+        $("#topContacts, #footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+        $("#topContacts, #footerContacts").append(HTMLcontactGeneric.replace("%data%", bio.contacts.website).replace("%contact%", "website"));
+        $("#topContacts, #footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+        $("#topContacts, #footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+        $("#topContacts, #footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
         $("#header").append(formattedWelcomeMessage);
         $("#header").append(formattedPictureURL);
         $("#header").append(HTMLskillsStart);
@@ -46,7 +41,7 @@ var education = {
         "degree": "AA",
         "dates": "2013 - 2015",
         "url": "www.sanjac.edu",
-        "majors": "Business"
+        "majors": ["business"]
     }],
     "onlineCourses": [{
         "title": "Front-End Web Developer Nanodegree",
@@ -62,7 +57,9 @@ var education = {
             $(".education-school:last").append(HTMLschoolDegree.replace("%data%", education.schools[i].degree));
             $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[i].dates));
             $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[i].location));
-            $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[i].majors));
+            for (a = 0; a < education.schools[i].majors.length; a++) {
+                $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[i].majors[a]));
+            }
             $(".education-entry:last").append(HTMLdivEnd);
         }
         for (i = 0; i < education.onlineCourses.length; i++) {
